@@ -1,0 +1,5 @@
+[
+	{ "path": "vendor/extra-1.js", "reason": "file-count" },
+	{ "path": "vendor/extra-2.js", "reason": "file-count" },
+	{ "path": "dist/bundle.js", "reason": "total-bytes" }
+]
