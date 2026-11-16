@@ -1,0 +1,21 @@
+services:
+  ollama:
+    image: ollama/ollama:0.5.7
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama:/root/.ollama
+
+  embeddings:
+    image: ghcr.io/huggingface/text-embeddings-inference:1.5
+    command: --model-id BAAI/bge-small-en-v1.5
+    ports:
+      - "127.0.0.1:8090:80"
+
+  api:
+    build: ./api
+    ports:
+      - "8080:8080"
+
+volumes:
+  ollama:
